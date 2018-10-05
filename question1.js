@@ -1,7 +1,13 @@
 #!/usr/bin/env node
 /*
  * Write a program that makes your robot move forward for a distance of 10cm. In order to do that, you need to find out the speed of the robot when both motors are moving forward.
-*/
+ * 
+ * Setup
+ * =====
+ * Left wheel => Port A
+ * Right Wheel => Port B
+ *
+ */
 
 require('./node_modules/ev3_source.js')
 

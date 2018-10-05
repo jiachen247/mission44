@@ -1,6 +1,12 @@
 #!/usr/bin/env node
 /*
-* Write a program which makes your robot visit all 4 quadrants regardless of the initial position and orientation.
+ * Write a program which makes your robot visit all 4 quadrants regardless of the initial position and orientation.
+ * 
+ * Setup
+ * =====
+ * Left wheel => Port A
+ * Right Wheel => Port B
+ * Color Sensor => Port 1
 */
 require('./node_modules/ev3_source.js');
 

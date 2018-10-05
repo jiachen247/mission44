@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 /*
-* Write a program that makes the robot turn 90° counterclockwise. You may choose to solve it the same way you did for the previous question or implement your own solution.
+ * Write a program that makes the robot turn 90° counterclockwise. You may choose to solve it the same way you did for the previous question or implement your own solution.
+ * 
+ * Setup
+ * =====
+ * Left wheel => Port A
+ * Right Wheel => Port B
 */
 require('./node_modules/ev3_source.js')
 
