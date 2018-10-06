@@ -4,9 +4,10 @@
  * 
  * Setup
  * =====
- * Left wheel => Port A
- * Right Wheel => Port B
-*/
+ * Left wheel => Port B
+ * Right Wheel => Port C
+ */
+
 require('./node_modules/ev3_source.js')
 
 display("=======================");
@@ -15,8 +16,8 @@ display("=======================");
 display("turn robot 90° counter clockwise...\n\n");
 
 // PLEASE MAKE SURE RIGHT WHEEL IS A AND LEFT WHEEL IS B RESPECTIVELY
-const wheel1 = ev3_motorA();
-const wheel2 = ev3_motorB();
+const wheel1 = ev3_motorB();
+const wheel2 = ev3_motorC();
 
 ev3_runForDistance(wheel1, -180, 800);
 ev3_runForDistance(wheel2, 180, 800);

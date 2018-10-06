@@ -4,8 +4,8 @@
  * 
  * Setup
  * =====
- * Left wheel => Port A
- * Right Wheel => Port B
+ * Left wheel => Port B
+ * Right Wheel => Port C
  *
  */
 
@@ -17,11 +17,11 @@ display("=======================");
 display("moving robot 10 cm...\n\n");
 
 const TARGET_DISTANCE = 10; // 10 cm
-const WHEEL_RADIUS = 3.5;
+const WHEEL_RADIUS = 3.6;
 const DISTANCE_PER_ROTATION = 2 * 3.14159265359 * WHEEL_RADIUS;
 
-const wheel1 = ev3_motorA();
-const wheel2 = ev3_motorB();
+const wheel1 = ev3_motorB();
+const wheel2 = ev3_motorC();
 
 const floor = function(n){ return n - (n % 1)};
 

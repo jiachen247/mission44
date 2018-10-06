@@ -4,8 +4,8 @@
  * 
  * Setup
  * =====
- * Left wheel => Port A
- * Right Wheel => Port B
+ * Left wheel => Port B
+ * Right Wheel => Port C
  * Color Sensor => Port 1
 */
 require('./node_modules/ev3_source.js');
@@ -16,11 +16,13 @@ display("=======================");
 display("explore all 4 quardrants...\n\n");
 
 const color_sensor = ev3_colorSensor();
-const wheel1 = ev3_motorA();
-const wheel2 = ev3_motorB();
+const wheel1 = ev3_motorB();
+const wheel2 = ev3_motorC();
+
+const BLACK_THRESHOLD = 1; 
+const WHITE_THRESHOLD = 28; // please change
 
 // Constants
-const BLACK_THRESHOLD = 20;
 const MAX_DISTANCE = 570;
 const WHEEL_RADIUS = 3.5;
 const DISTANCE_PER_ROTATION = 2 * 3.14159265359 * WHEEL_RADIUS;
@@ -28,12 +30,7 @@ const DISTANCE_PER_ROTATION = 2 * 3.14159265359 * WHEEL_RADIUS;
 const floor = function(n){ return n - (n % 1)};
 
 function is_black(color_sensor){
-
-    const rval = ev3_colorSensorRed(color_sensor);
-    const gval = ev3_colorSensorGreen(color_sensor);
-    const bval = ev3_colorSensorBlue(color_sensor);
-
-    return ((rval + gval + bval) / 3) < BLACK_THRESHOLD;
+    return ev3_reflectedLightIntensity(color_sensor) < 10;
 }
 
 function move(distance){
@@ -58,7 +55,6 @@ move(MAX_DISTANCE);
 ev3_runUntil(alwaysFalse, main);
 
 function main(){
-    
     if(is_black(color_sensor)){
         display("!BLACK DETECTED!");
         stop();
