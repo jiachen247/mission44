@@ -2,12 +2,19 @@
 /*
  * Write a program which makes your robot visit all 4 quadrants regardless of the initial position and orientation.
  * 
+ * Studio 1A
+ * -----------
+ * Liow Jia Chen
+ * 
+ * 
+ * 
  * Setup
  * =====
- * Left wheel => Port B
+ * Left Wheel => Port B
  * Right Wheel => Port C
  * Color Sensor => Port 1
 */
+
 require('./node_modules/ev3_source.js');
 
 display("=======================");
@@ -19,18 +26,18 @@ const color_sensor = ev3_colorSensor();
 const wheel1 = ev3_motorB();
 const wheel2 = ev3_motorC();
 
-const BLACK_THRESHOLD = 1; 
-const WHITE_THRESHOLD = 28; // please change
+const BLACK_THRESHOLD = 10; 
 
-// Constants
 const MAX_DISTANCE = 570;
 const WHEEL_RADIUS = 3.5;
 const DISTANCE_PER_ROTATION = 2 * 3.14159265359 * WHEEL_RADIUS;
 
-const floor = function(n){ return n - (n % 1)};
+function floor(n){ 
+    return n - (n % 1);
+}
 
 function is_black(color_sensor){
-    return ev3_reflectedLightIntensity(color_sensor) < 10;
+    return ev3_reflectedLightIntensity(color_sensor) < BLACK_THRESHOLD;
 }
 
 function move(distance){
@@ -47,7 +54,7 @@ function stop(){
     ev3_stop(wheel2);
 }
 
-const alwaysFalse = function(){
+function alwaysFalse(){
     return false;
 }
 
@@ -56,7 +63,7 @@ ev3_runUntil(alwaysFalse, main);
 
 function main(){
     if(is_black(color_sensor)){
-        display("!BLACK DETECTED!");
+        display("! BLACK DETECTED !");
         stop();
         turn_left();
         ev3_pause(200);
