@@ -5,8 +5,9 @@
  * Studio 1A
  * -----------
  * Liow Jia Chen
- * 
- * 
+ * Derrick Teo Hao Ying
+ * Tan Yi Lin Elaine
+ * Zhang Dongjun
  * 
  * Setup
  * =====
@@ -29,9 +30,10 @@ const DISTANCE_PER_ROTATION = 2 * 3.14159265359 * WHEEL_RADIUS;
 const wheel1 = ev3_motorB();
 const wheel2 = ev3_motorC();
 
-function floor(n){ 
+function floor(n){
     return n - (n % 1);
 }
 
-ev3_runForDistance(wheel1, floor(TARGET_DISTANCE / DISTANCE_PER_ROTATION * 360), 500);
-ev3_runForDistance(wheel2, floor(TARGET_DISTANCE / DISTANCE_PER_ROTATION * 360), 500);
+ev3_runForDistance(wheel1, floor(TARGET_DISTANCE / DISTANCE_PER_ROTATION * 360), 100);
+ev3_runForDistance(wheel2, floor(TARGET_DISTANCE / DISTANCE_PER_ROTATION * 360), 100);
+

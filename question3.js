@@ -5,8 +5,9 @@
  * Studio 1A
  * -----------
  * Liow Jia Chen
- * 
- * 
+ * Derrick Teo Hao Ying
+ * Tan Yi Lin Elaine
+ * Zhang Dongjun
  * 
  * Setup
  * =====
@@ -26,13 +27,13 @@ const color_sensor = ev3_colorSensor();
 const wheel1 = ev3_motorB();
 const wheel2 = ev3_motorC();
 
-const BLACK_THRESHOLD = 10; 
+const BLACK_THRESHOLD = 10;
 
 const MAX_DISTANCE = 570;
 const WHEEL_RADIUS = 3.5;
 const DISTANCE_PER_ROTATION = 2 * 3.14159265359 * WHEEL_RADIUS;
 
-function floor(n){ 
+function floor(n){
     return n - (n % 1);
 }
 
@@ -72,3 +73,4 @@ function main(){
         display("keep swimming ~~~");
     }
 }
+

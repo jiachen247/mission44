@@ -5,8 +5,9 @@
  * Studio 1A
  * -----------
  * Liow Jia Chen
- * 
- * 
+ * Derrick Teo Hao Ying
+ * Tan Yi Lin Elaine
+ * Zhang Dongjun
  * 
  * Setup
  * =====
@@ -25,5 +26,6 @@ display("turn robot 90° counter clockwise...\n\n");
 const wheel1 = ev3_motorB();
 const wheel2 = ev3_motorC();
 
-ev3_runForDistance(wheel1, -180, 800);
-ev3_runForDistance(wheel2, 180, 800);
+ev3_runForDistance(wheel1, -180, 400);
+ev3_runForDistance(wheel2, 180, 400);
+         
